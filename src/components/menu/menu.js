@@ -68,14 +68,6 @@ function menuMaker(array) {
 */
 
 const header = document.querySelector('.header')
+// const menuArray = menuMaker(menuItems)
 
-const menuArray = menuItems.map(index => {
-  return menuMaker(index);
-})
-
-menuArray.forEach(element => {
-  header.appendChild(element);
-})
-
-console.log(menuArray)
-console.log(header)
+header.appendChild(menuMaker(menuItems))
