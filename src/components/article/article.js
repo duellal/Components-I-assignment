@@ -87,13 +87,6 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  },
-  {
-    title: 'Test Title',
-    date: 'March 31, 2021',
-    firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.',
-    secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.',
-    thirdParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.'
   }
 ];
 
@@ -168,6 +161,32 @@ console.log(articleMaker(data));
 // })
 
 //Using .map and .forEach:
+//Commented them out, copied + pasted on bottom in order to add element to the data array
+
+// const articleArray = data.map(obj => {
+//   return articleMaker(obj);
+// })
+
+// articleArray.forEach(element => {
+//   document.body.appendChild(element);
+// })
+
+/*
+  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  Refresh the page to see the new article.
+*/
+
+const add = {
+  title: 'Test Title',
+  date: 'March 31, 2021',
+  firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.',
+  secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.',
+  thirdParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.'
+}
+
+data.push(add)
+
+//Copied + pasted here to show the added object in the data Array of objects b/c of inheritance
 const articleArray = data.map(obj => {
   return articleMaker(obj);
 })
@@ -175,10 +194,3 @@ const articleArray = data.map(obj => {
 articleArray.forEach(element => {
   document.body.appendChild(element);
 })
-
-console.log(articleArray)
-/*
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
-//Put 'Test Title' Article in
