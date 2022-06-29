@@ -103,15 +103,94 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+*/
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+function articleMaker({ title: title, date: date, firstParagraph: firstParagraph, secondParagraph: secondParagraph, thirdParagraph: thirdParagraph }) {
+  const article = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const pDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
 
-  Step 3: Don't forget to return something from your function!
+  article.classList.add('article');
+  pDate.classList.add('date');
+  span.classList.add('expandButton');
 
+  article.appendChild(h2);
+  article.appendChild(pDate);
+  article.appendChild(p1);
+  pDate.appendChild(p2);
+  pDate.appendChild(p3);
+  article.appendChild(span);
+
+  h2.textContent = title;
+  pDate.textContent = date;
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+  span.textContent = '+';
+
+  /*
+    Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+    This listener should toggle the class 'article-open' on div.article.
+  */
+
+  span.addEventListener('click', event => {
+    article.classList.toggle('article-open')
+  })
+
+  /*
+    Step 3: Don't forget to return something from your function!
+  */
+
+  return article;
+}
+
+//Double checking my work:
+console.log(articleMaker(data));
+
+/*
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
+*/
+//Using forEach only:
+// data.forEach(obj => {
+//   document.body.appendChild(articleMaker(obj))
+// })
 
+//Using .map and .forEach:
+//Commented them out, copied + pasted on bottom in order to add element to the data array
+
+// const articleArray = data.map(obj => {
+//   return articleMaker(obj);
+// })
+
+// articleArray.forEach(element => {
+//   document.body.appendChild(element);
+// })
+
+/*
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+const add = {
+  title: 'Test Title',
+  date: 'March 31, 2021',
+  firstParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.',
+  secondParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.',
+  thirdParagraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Scelerisque eu ultrices vitae auctor. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Dictum non consectetur a erat nam at lectus urna. Et sollicitudin ac orci phasellus egestas tellus rutrum. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Nulla posuere sollicitudin aliquam ultrices sagittis. Molestie a iaculis at erat. Mauris augue neque gravida in. Curabitur vitae nunc sed velit dignissim. Ante in nibh mauris cursus mattis. Imperdiet nulla malesuada pellentesque elit eget. Est pellentesque elit ullamcorper dignissim cras tincidunt. Ac tortor dignissim convallis aenean et tortor. Orci nulla pellentesque dignissim enim sit amet venenatis urna cursus. Urna et pharetra pharetra massa massa ultricies mi quis. Egestas fringilla phasellus faucibus scelerisque eleifend. Pellentesque elit eget gravida cum sociis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt.'
+}
+
+data.push(add)
+
+//Copied + pasted here to show the added object in the data Array of objects b/c of inheritance
+const articleArray = data.map(obj => {
+  return articleMaker(obj);
+})
+
+articleArray.forEach(element => {
+  document.body.appendChild(element);
+})
